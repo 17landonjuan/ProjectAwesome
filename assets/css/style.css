@@ -1,0 +1,51 @@
+/* label color */
+.input-field label {
+    color: #000;
+  }
+  /* label focus color */
+  .input-field input[type=text]:focus + label {
+    color: #000;
+  }
+  /* label underline focus color */
+  .input-field input[type=text]:focus {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* valid color */
+  .input-field input[type=text].valid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* invalid color */
+  .input-field input[type=text].invalid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* icon prefix focus color */
+  .input-field .prefix.active {
+    color: #000;
+  }
+  @import "@material/textfield/mdc-text-field";
+  @import url("bootstrap.min.css");
+@import url("bootstrap-theme.css");
+#info{
+    border: 5px;
+    margin: 18px;
+}
+h1{
+    
+    font-family: 'Lobster', cursive;
+}  
+#desc{
+    font-size: 28px;
+    font-family: 'Lobster', cursive;
+}
+.btn{
+    border:20px;
+    position:relative;
+    margin:10px;
+    
+}
+
+  
+  
