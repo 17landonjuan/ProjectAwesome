@@ -28,9 +28,9 @@
   @import "@material/textfield/mdc-text-field";
   @import url("bootstrap.min.css");
 @import url("bootstrap-theme.css");
-#info{
-    border: 5px;
-    margin: 18px;
+.card{
+    margin-left:auto;
+    margin-right:auto;
 }
 h1{
     
@@ -41,10 +41,21 @@ h1{
     font-family: 'Lobster', cursive;
 }
 .btn{
-    border:20px;
-    position:relative;
-    margin:10px;
+    position:auto;
+    right:5;
+    margin:1px;
     
+ 
+    
+    
+}
+#carInfo{
+    margin-left:auto;
+    margin-right:auto;
+}
+#btn{
+    margin:0px;
+}
 }
 
   

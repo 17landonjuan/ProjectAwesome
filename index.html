@@ -27,32 +27,74 @@
             <h1 class="display-4">Trips With Friends</h1>
             <p id="desc" class="lead">Map out your trip from your starting location to your destination</p>
             <p id="desc">Find out how much gas you'll use and how much it'll cost</p>
-            <p id="desc">Add your buds to your trip group and divide the cost up evenly among everyone traveling with
-                you!</p>
+            <p id="desc">Enter in how many people are traveling with you and split the cost up evenly</p>
             <p id="desc">All thats left is to hit the open road and have a great time taking Trips With Friends!</p>
 
         </div>
     </div>
     <form class="form">
         <div class="row">
-            <div id="info" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="name">
-                <label class="mdl-textfield__label" for="name">Name</label>
-            </div>
-            <div id="info" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="frnds">
-                <label class="mdl-textfield__label" for="frnds">Trip Companions</label>
-            </div>
-            <div id="info" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="start">
-                <label class="mdl-textfield__label" for="start">Trip Start</label>
-            </div>
-            <div id="info" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="dest">
-                <label class="mdl-textfield__label" for="dest">Trip Destination</label>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Trip Info</h5>
+                    <div id="info" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" id="name">
+                        <label class="mdl-textfield__label" for="name">Name</label>
+                    </div>
+                    <div id="info" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" id="frnds">
+                        <label class="mdl-textfield__label" for="frnds"># of People</label>
+                    </div>
+                    <div id="info" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" id="start">
+                        <label class="mdl-textfield__label" for="start">Trip Start</label>
+                    </div>
+                    <div id="info" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" type="text" id="dest">
+                        <label class="mdl-textfield__label" for="dest">Trip Destination</label>
+                    </div>
+                </div>
             </div>
         </div>
-        <input class="btn btn-primary" type="submit" value="Submit">
+        <br>
+        <div id="carInfo" class="container">
+            <div class="row">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Vehicle Info</h5>
+                        <div class="form-group">
+                            <label for="year">Year</label>
+                            <select id="year" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>...</option>
+                            </select></div>
+                        <div class="form-group">
+                            <label for="make">Vehicle Make</label>
+                            <select id="make" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>...</option>
+                            </select></div>
+                        <div class="form-group">
+                            <label for="model">Vehicle Model</label>
+                            <select id="model" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>...</option>
+                            </select></div>
+                        <div class="form-group">
+                            <label for=" option">Vehicle Option</label>
+                            <select id="option" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>...</option>
+                            </select></div>
+
+                        <div id="btn" class="row">
+
+                            <input class="btn btn-primary" type="submit" value="Submit">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
 </body>
 
