@@ -5,11 +5,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Project Awesome!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="javascript" href="assets/javascript/app.js">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <title>Trips With Friends</title>
+
 </head>
 
-<body>
 
+
+<body>
+    <div class="jumbotron jumbotron-fluid bg-info text-white">
+        <div class="container">
+            <h1 class="display-4">Trips With Friends</h1>
+            <p id="desc" class="lead">Map out your trip from your starting location to your destination</p>
+            <p id="desc">Find out how much gas you'll use and how much it'll cost</p>
+            <p id="desc">Add your buds to your trip group and divide the cost up evenly among everyone traveling with
+                you!</p>
+            <p id="desc">All thats left is to hit the open road and have a great time taking Trips With Friends!</p>
+
+        </div>
+    </div>
+    <form class="form">
+        <div class="row">
+            <div id="info" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="name">
+                <label class="mdl-textfield__label" for="name">Name</label>
+            </div>
+            <div id="info" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="frnds">
+                <label class="mdl-textfield__label" for="frnds">Trip Companions</label>
+            </div>
+            <div id="info" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="start">
+                <label class="mdl-textfield__label" for="start">Trip Start</label>
+            </div>
+            <div id="info" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="dest">
+                <label class="mdl-textfield__label" for="dest">Trip Destination</label>
+            </div>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </form>
 </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </html>
