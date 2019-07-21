@@ -1,5 +1,6 @@
 function getMPG() {
 
+
     var year = $("#year").val();
     var make = $("#make").val();
     var model = $("#model").val();
@@ -16,7 +17,7 @@ function getMPG() {
 
     }).then(function (response) {
         var carID = xmlToJson(response).menuItems.menuItem[0].value["#text"]
-
+        console.log(response);
 
         $.ajax({
             type: "GET",
@@ -31,4 +32,8 @@ function getMPG() {
 
     })
 
+
+
 }
+
+
