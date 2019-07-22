@@ -43,11 +43,7 @@ h1{
 .btn{
     position:auto;
     right:5;
-    margin:1px;
-    
- 
-    
-    
+    margin:1px;   
 }
 #carInfo{
     margin-left:auto;
@@ -61,8 +57,23 @@ h1{
 }
 .modal{
     width: 900px;
-    height: 700px;
+    height: 600px;
     margin-top: 100px;
 }
-  
+.modal-content{
+    width:817px;
+    height:455px;
+} 
+.element.style{
+    padding-right:32px;
+    padding-left:16px;
+}
+#map{
+    width:65%;
+}
+#display{
+    height:455px;
+    width:817px;S
+}
+}
   
