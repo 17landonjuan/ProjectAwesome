@@ -4,8 +4,8 @@ function getMPG() {
     var year = $("#year").val();
     var make = $("#make").val();
     var model = $("#model").val();
-    var option = $("#option option:selected").attr("data-id");
-    console.log(option);
+    var option = $("#option").attr("data-id");
+    console.log("option");
 
 
 
@@ -17,7 +17,7 @@ function getMPG() {
 
     }).then(function (response) {
         var carID = xmlToJson(response).menuItems.menuItem[0].value["#text"]
-        console.log(response);
+        console.log("response");
 
         $.ajax({
             type: "GET",
@@ -27,7 +27,7 @@ function getMPG() {
             highwayMPG = xmlToJson(response).vehicle.highway08["#text"];
             console.log("getMPG done")
             var totalGas = convertedDistance / highwayMPG
-            console.log(totalGas)
+            console.log("totalGas")
         })
 
     })
