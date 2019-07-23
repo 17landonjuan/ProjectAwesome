@@ -6,18 +6,19 @@ var year;
 var make;
 
 function initMap() {
-    var directionsService = new google.maps.DirectionsService;
-    var directionsDisplay = new google.maps.DirectionsRenderer;
-    map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
-        center: {
-            lat: 39,
-            lng: -94.5786
-        }
-    });
-    directionsDisplay.setMap(map);
+    // //var directionsService = new google.maps.DirectionsService;
+    // var directionsDisplay = new google.maps.DirectionsRenderer;
+    // map = new google.maps.Map(document.getElementById('map'), {
+    //     zoom: 4,
+    //     center: {
+    //         lat: 39,
+    //         lng: -94.5786
+    //     }
+    // });
+    // directionsDisplay.setMap(map);
 
     var getMakes = function () {
+        console.log("text");
         $("#make").slice(1).empty();
         year = $("#year").val();
         $.ajax({
@@ -54,7 +55,7 @@ function initMap() {
 
 
     var getOptions = function () {
-
+        console.log("test");
         $("#option").slice(1).empty();
         model = $("#model").val();
         $.ajax({
@@ -129,3 +130,5 @@ function initMap() {
     }
 
 }
+
+initMap();
