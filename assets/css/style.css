@@ -120,3 +120,34 @@ h1 {
   width: 30vw;
   min-width: 300px;
 }
+body{
+  font-family:  "Raleway", Helvetica, sans-serif;
+}
+h2{
+   font-weight: bold;
+}
+h4{
+   color:  grey;
+}
+.img-thumbnail{
+border-radius: 50%;
+}
+.name{
+   margin: 50px 0 0 0;
+   color: black;
+   font-weight: bold;
+   font-size: 18px;
+}
+.mini-bio{
+   font-size: 18px;
+   color: grey;
+}
+.bios{
+   border: solid 1px grey;
+   border-left: 1px;
+   border-right: 1px;
+}
+.col-md-2{
+   padding: 20px 2px 20px 2px;
+}
+
