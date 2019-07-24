@@ -2,6 +2,29 @@
   width: 600px;
 }
 
+#section1 .row {
+  display: block;
+  width: 100%;
+}
+
+.row {
+  justify-content: center;
+}
+
+#headerContainer {
+  background-color: rgba(0, 0, 0, 0.192);
+  font-size: 12px;
+  width: 100%;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+#headerContainer h4 {
+  color: #ebfffa;
+  text-shadow: 1px 0px 11px #000000;
+  font-family: 'Raleway', Arial, Helvetica, sans-serif;
+}
+
 /* label color */
 .input-field label {
   color: #000;
@@ -35,13 +58,10 @@
   color: #000;
 }
 
-@import "@material/textfield/mdc-text-field";
-@import url("bootstrap.min.css");
-@import url("bootstrap-theme.css");
-
 .card {
   margin-left: auto;
   margin-right: auto;
+  width: 25rem;
 }
 
 h1 {
@@ -54,11 +74,9 @@ h1 {
   font-family: 'Lobster', cursive;
 }
 
-/* .btn {
-  position: auto;
-  right: 5;
-  margin: 1px;
-} */
+.btn {
+  background-color: #76e881;
+}
 
 #carInfo {
   margin-left: auto;
@@ -90,39 +108,46 @@ h1 {
   height: 100vh;
   margin-bottom: 0;
   min-height: 500px;
+  background-color: transparent;
 }
 
 .main {
   height: 100vh;
   min-height: 600px;
+  position: relative;
 }
-#section1{
-background-image: url("../media/road1.jpg");
-background-size: cover;
-opacity: 0.7;
+
+.footer {
+  height: 100vh;
+  min-height: 600px;
+  position: relative;
 }
+
+#section1 {
+  background-image: url("../media/2.png");
+  background-size: cover;
+}
+
 #section2 {
-  background-image: url("../media/road2.jpeg");
-background-size: cover;
-opacity: 0.7;
+  background-image: url("../media/7.png");
+  background-size: cover;
 }
 
 #section3 {
-  background-image: url("../media/foggy-road.jpg");
-  background-size: cover; 
-  opacity: 0.7;
+  background-image: url("../media/3.png");
+  background-size: cover;
 }
 
 #section4 {
-  background-image: url("../media/rt66.jpg");
+  background-image: url("../media/8.png");
   background-size: cover;
-  opacity: 0.7;
 }
-#section5{
-  background-image: url("../media/monument-valley.jpg");
+
+#section5 {
+  background-image: url("../media/1.png");
   background-size: cover;
-  opacity: 0.9;
 }
+
 .mapBox {
   height: 50vh;
   width: 30vw;
@@ -134,37 +159,149 @@ opacity: 0.7;
   width: 30vw;
   min-width: 300px;
 }
-body{
-  font-family:  "Raleway", Helvetica, sans-serif;
+
+body {
+  font-family: "Raleway", Helvetica, sans-serif;
 }
-h2{
-   font-weight: bold;
+
+h2 {
+  font-weight: bold;
 }
-h4{
-   color:  grey;
+
+h4 {
+  color: grey;
 }
-.img-thumbnail{
-border-radius: 50%;
+
+.img-thumbnail {
+  border-radius: 50%;
 }
-.name{
-   margin: 50px 0 0 0;
-   color: rgb(64, 255, 124);
-   font-weight: bold;
-   font-size: 18px;
+
+.name {
+  margin: 50px 0 0 0;
+  color: rgb(64, 255, 124);
+  font-weight: bold;
+  font-size: 18px;
 }
-.mini-bio{
-   font-size: 18px;
-   color: grey;
+
+.mini-bio {
+  font-size: 18px;
+  color: grey;
 }
-.bios{
-   border: solid 1px grey;
-   border-left: 1px;
-   border-right: 1px;
+
+.bios {
+  border: solid 1px grey;
+  border-left: 1px;
+  border-right: 1px;
 }
-.col-md-2{
-   padding: 20px 2px 20px 2px;
+
+.col-md-2 {
+  padding: 20px 2px 20px 2px;
 }
-.mini-bios{
+
+.mini-bios {
   color: rgb(64, 255, 124);
 }
 
+@media (max-width: 768px) {
+
+  #headerContainer h4 {
+    font-size: 20px;
+  }
+
+  label {
+    font-size: 20px;
+  }
+
+  .form-control {
+    font-size: 20px;
+  }
+
+  option {
+    font-size: 12px;
+  }
+
+  .main {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .bios {
+    text-align: center;
+  }
+
+  #logo {
+    width: 100%;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .img-thumbnail {
+    height: 40px;
+
+  }
+
+  #section5 h4 {
+    font-size: 12px;
+  }
+
+  #section5 h2 {
+    font-size: 12px;
+  }
+
+  .name {
+    margin-top: 0;
+    font-size: 12px;
+  }
+
+  .mini-bio {
+    font-size: 12px;
+  }
+
+
+  .mapBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50vh;
+    width: 100%;
+  }
+
+  .resultsBox {
+    position: absolute;
+    top: 50vh;
+    left: 0;
+    height: 40vh;
+    width: 100%;
+  }
+
+  .navButton {
+    position: absolute;
+    bottom: 3vh;
+    right: 5vw;
+  }
+
+  .container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+  }
+
+
+  .main .form,
+  .main .row,
+  .main .card {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .footer .col-md-2 {
+    padding: 0;
+  }
+
+}
