@@ -96,19 +96,33 @@ h1 {
   height: 100vh;
   min-height: 600px;
 }
-
+#section1{
+background-image: url("../media/road1.jpg");
+background-size: cover;
+opacity: 0.7;
+}
 #section2 {
-  background-color: #9BDDE8;
+  background-image: url("../media/road2.jpeg");
+background-size: cover;
+opacity: 0.7;
 }
 
 #section3 {
-  background-color: #B3E89B;
+  background-image: url("../media/foggy-road.jpg");
+  background-size: cover; 
+  opacity: 0.7;
 }
 
 #section4 {
-  background-color: #B8FFD8;
+  background-image: url("../media/rt66.jpg");
+  background-size: cover;
+  opacity: 0.7;
 }
-
+#section5{
+  background-image: url("../media/monument-valley.jpg");
+  background-size: cover;
+  opacity: 0.9;
+}
 .mapBox {
   height: 50vh;
   width: 30vw;
@@ -134,7 +148,7 @@ border-radius: 50%;
 }
 .name{
    margin: 50px 0 0 0;
-   color: black;
+   color: rgb(64, 255, 124);
    font-weight: bold;
    font-size: 18px;
 }
@@ -149,5 +163,8 @@ border-radius: 50%;
 }
 .col-md-2{
    padding: 20px 2px 20px 2px;
+}
+.mini-bios{
+  color: rgb(64, 255, 124);
 }
 
