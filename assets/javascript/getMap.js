@@ -7,16 +7,16 @@ var make;
 var convertedDistance;
 
 function initMap() {
-    var directionsService = new google.maps.DirectionsService;
-    var directionsDisplay = new google.maps.DirectionsRenderer;
-    map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
-        center: {
-            lat: 39,
-            lng: -94.5786
-        }
-    });
-    directionsDisplay.setMap(map);
+    // //var directionsService = new google.maps.DirectionsService;
+    // var directionsDisplay = new google.maps.DirectionsRenderer;
+    // map = new google.maps.Map(document.getElementById('map'), {
+    //     zoom: 4,
+    //     center: {
+    //         lat: 39,
+    //         lng: -94.5786
+    //     }
+    // });
+    // directionsDisplay.setMap(map);
 
     $("#submit").on("click", function myfunction() {
         event.preventDefault();
