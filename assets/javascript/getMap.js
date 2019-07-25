@@ -1,11 +1,14 @@
 var totalGas;
 var distance;
+var duration;
 var map;
 var highwayMPG;
 var year;
 var make;
 var convertedDistance;
-var totalNumOnTrip
+var totalNumOnTrip = 1;
+var hours;
+var minutes;
 
 function initMap() {
     var directionsService = new google.maps.DirectionsService;
@@ -37,6 +40,8 @@ function initMap() {
             if (status === 'OK') {
                 directionsDisplay.setDirections(response);
                 distance = response.routes[0].legs[0].distance.value;
+                duration = response.routes[0].legs[0].duration.value;
+                console.log(duration);
             } else {
                 $("#autocompleteEnd").val('').css("background-color", "rgba(228, 255, 0, 0.34)");
                 $("#autocompleteStart").val('').css("background-color", "rgba(228, 255, 0, 0.34)");
@@ -74,8 +79,6 @@ function initMap() {
                             // Storing an array of results in the results variable
                             var tripToggle = $('#tripToggle').prop('checked');
 
-                            alert(tripToggle);
-
                             var results = response.series;
 
                             // Creating variable to drill down to monthly average price of unleaded gas
@@ -98,6 +101,7 @@ function initMap() {
                                 var milesOverMeters = 1 / 1609.34;
 
                                 // Total Trip Distance in Miles
+
                                 var totalTripDistanceMi = Math.round((distance * milesOverMeters) * 100) / 100;
 
                                 // Total gallons of gas used on the trip
@@ -109,15 +113,34 @@ function initMap() {
                                 // Total cost of gas per friend
                                 var costOfGasPerFriend = Math.round((totalGasCost / totalNumOnTrip) * 100) / 100;
 
+
+
+                                if (tripToggle === true) {
+                                    totalTripDistanceMi = totalTripDistanceMi * 2;
+                                    totalGasUsed = totalGasUsed * 2;
+                                    totalGasCost = totalGasCost * 2;
+                                    costOfGasPerFriend = costOfGasPerFriend * 2;
+                                    duration = duration * 2;
+                                }
+
+                                function hhmmss(secs) {
+                                    minutes = Math.floor(secs / 60);
+                                    hours = Math.floor(minutes / 60);
+                                    minutes = minutes % 60;
+                                }
+
+                                hhmmss(duration);
+
                                 console.log("Total Trip Distance: " + totalTripDistanceMi + " mi");
                                 console.log("Total Gas Used on Trip: " + totalGasUsed + " gallons");
                                 console.log("Total Cost of Gas on Trip: $" + totalGasCost);
-                                console.log("Cost of Gas per Friend $ " + costOfGasPerFriend);
+                                console.log("Cost of Gas per Passenger $ " + costOfGasPerFriend);
 
-                                var p2 = $("<p>").text("Total Trip Distance: " + totalTripDistanceMi + " mi");
-                                var p3 = $("<p>").text("Total Gas Used on Trip: " + totalGasUsed + " gallons");
-                                var p4 = $("<p>").text("Total Cost of Gas on Trip: $" + totalGasCost);
-                                var p5 = $("<p>").text("Cost of Gas per Friend: $ " + costOfGasPerFriend);
+                                var p2 = $("<p>").text("Total Distance: " + totalTripDistanceMi + " mi");
+                                var p3 = $("<p>").text("Total Gas Used: " + totalGasUsed + " gallons");
+                                var p4 = $("<p>").text("Total Cost of Gas: $" + totalGasCost);
+                                var p5 = $("<p>").text("Cost of Gas per Person: $ " + costOfGasPerFriend);
+                                var p6 = $("<p>").text("Total Driving Time: " + hours + " h " + minutes + " min");
 
                                 $('#results').append(p2);
                                 $('#results').append(p3);

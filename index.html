@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
@@ -21,15 +21,15 @@
 <body>
     <div class="main d-flex flex-column align-content-center align-items-center justify-content-center" id="section1">
 
-        <h1><img id="logo" src="assets/media/logoHorizontal.png"></h1>
+        <h1 id="logo"><img id="logo" src="assets/media/logoHorizontal.png"></h1>
 
 
 
         <div id="headerContainer" class="text-center">
-            <h4>Map your trip.</h4>
+            <h4>Map your road trip.</h4>
             <h4>Calculate your gas cost. </h4>
-            <h4>Split the cost with your friends.</h4>
-            <h4>All thats left is to hit the open road and have a great time taking Trips With Friends!
+            <h4>Split the cost among passengers.</h4>
+            <h4>Have a great time taking Trips With Friends!
             </h4>
         </div>
 
@@ -47,18 +47,18 @@
                         <div class="card-body">
                             <h5 class="card-title">Trip Info</h5>
 
-                            <div id="info1" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="text" id="frnds" placeholder="">
-                                <label class="mdl-textfield__label" for="frnds"># of People</label>
+                            <div id="info1">
+                                <input type="text" id="frnds" placeholder="">
+                                <label for="frnds">Number of Passengers</label>
                             </div>
-                            <div id="info2" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="text" id="autocompleteStart" placeholder="">
-                                <label class="mdl-textfield__label" for="autocompleteStart">Trip Start</label>
+                            <div id="info2">
+                                <input type="text" id="autocompleteStart" placeholder="">
+                                <label for="autocompleteStart">Trip Start</label>
                             </div>
 
-                            <div id="info3" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="text" id="autocompleteEnd" placeholder="">
-                                <label class="mdl-textfield__label" for="autocompleteEnd">Trip End</label>
+                            <div id="info3">
+                                <input type="text" id="autocompleteEnd" placeholder="">
+                                <label for="autocompleteEnd">Trip End</label>
                             </div>
                             <div class="switch">
                                 <label>
@@ -68,7 +68,7 @@
                                     Roundtrip
                                 </label>
                             </div>
-                            <a class="navButton" href="#section3">
+                            <a href="#section3">
                                 <button type="button" id="continue" class="btn btn-primary">Continue</button>
                             </a>
                         </div>
@@ -141,7 +141,7 @@
                         </div>
 
                         <div id="btn">
-                            <a class="navButton" href="#section4">
+                            <a href="#section4">
                                 <button id="submit" type="button" class="btn btn-primary">Submit</button>
                             </a>
                         </div>

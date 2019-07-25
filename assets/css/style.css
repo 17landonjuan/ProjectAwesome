@@ -59,7 +59,7 @@
 }
 
 .switch {
-  margin-top: 2vh;
+  margin-top: 4vh;
   margin-bottom: 4vh;
   font-size: 2rem;
   margin-left: auto;
@@ -68,7 +68,8 @@
 }
 
 label {
-  font-size: 1.2rem;
+  color: rgb(63, 81, 181);
+  font-size: 14px;
 }
 
 .card {
@@ -227,9 +228,10 @@ h1 {
   height: 50vh;
   width: 30vw;
   min-width: 300px;
-  background: #00000026;
+  background: #00000057;
   padding: 2vw;
   color: white;
+  margin-left: 2vw;
 }
 
 body {
@@ -302,7 +304,8 @@ h4 {
   }
 
   #logo {
-    width: 100%;
+    width: 90%;
+    text-align: center;
   }
 
   .container {
@@ -336,23 +339,25 @@ h4 {
     position: absolute;
     top: 0;
     left: 0;
-    height: 30vh;
+    height: 35vh;
     width: 100%;
   }
 
   .resultsBox {
     position: absolute;
-    top: 50vh;
+    top: 35vh;
     left: 0;
-    height: 40vh;
+    height: 75vh;
     width: 100%;
-
+    background: #0000008c;
+    padding: 5vw;
+    margin: 0;
   }
 
   .navButton {
     position: absolute;
-    bottom: 5vh;
-    right: 5vw;
+    bottom: 20px;
+    right: 20px;
   }
 
   .container {
