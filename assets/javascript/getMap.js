@@ -5,6 +5,7 @@ var highwayMPG;
 var year;
 var make;
 var convertedDistance;
+var totalNumOnTrip
 
 function initMap() {
     var directionsService = new google.maps.DirectionsService;
@@ -71,6 +72,10 @@ function initMap() {
                             url: "http://api.eia.gov/series/?api_key=4e2512a68239a8a4d7fcccd3cea3b0c1&series_id=TOTAL.RUUCUUS.M",
                         }).then(function (response) {
                             // Storing an array of results in the results variable
+                            var tripToggle = $('#tripToggle').prop('checked');
+
+                            alert(tripToggle);
+
                             var results = response.series;
 
                             // Creating variable to drill down to monthly average price of unleaded gas
@@ -87,7 +92,7 @@ function initMap() {
                             // Function to calculate total price of gas for trip and divide by user input number of people on tirp
                             var tripCostDividedByFriends = function () {
 
-                                var totalNumOnTrip = 4;
+                                totalNumOnTrip = $("#frnds").val();
 
                                 // Conversion from meters to miles
                                 var milesOverMeters = 1 / 1609.34;

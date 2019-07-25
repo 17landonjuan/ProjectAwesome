@@ -47,22 +47,23 @@
                         <div class="card-body">
                             <h5 class="card-title">Trip Info</h5>
 
-                            <div id="info" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="text" id="frnds">
+                            <div id="info1" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="frnds" placeholder="">
                                 <label class="mdl-textfield__label" for="frnds"># of People</label>
                             </div>
-                            <div id="info" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="text" id="autocompleteStart">
-                                <label class="mdl-textfield__label" for="start">Trip Start</label>
+                            <div id="info2" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="autocompleteStart" placeholder="">
+                                <label class="mdl-textfield__label" for="autocompleteStart">Trip Start</label>
                             </div>
-                            <div id="info" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input class="mdl-textfield__input" type="text" id="autocompleteEnd">
-                                <label class="mdl-textfield__label" for="end">Trip End</label>
+
+                            <div id="info3" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="autocompleteEnd" placeholder="">
+                                <label class="mdl-textfield__label" for="autocompleteEnd">Trip End</label>
                             </div>
                             <div class="switch">
                                 <label>
                                     One-Way
-                                    <input type="checkbox">
+                                    <input id="tripToggle" type="checkbox">
                                     <span class="lever"></span>
                                     Roundtrip
                                 </label>
@@ -140,7 +141,7 @@
 
                         </div>
 
-                        <div id="btn" class="row">
+                        <div id="btn">
                             <a class="navButton" href="#section4">
                                 <button id="submit" type="button" class="btn btn-primary">Submit</button>
                             </a>

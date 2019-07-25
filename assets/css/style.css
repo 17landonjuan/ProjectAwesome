@@ -58,6 +58,19 @@
   color: #000;
 }
 
+.switch {
+  margin-top: 2vh;
+  margin-bottom: 4vh;
+  font-size: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+label {
+  font-size: 1.2rem;
+}
+
 .card {
   margin-left: auto;
   margin-right: auto;
@@ -278,7 +291,7 @@ h4 {
 
   .navButton {
     position: absolute;
-    bottom: 3vh;
+    bottom: 5vh;
     right: 5vw;
   }
 
@@ -302,6 +315,12 @@ h4 {
 
   .footer .col-md-2 {
     padding: 0;
+  }
+
+  .card {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
   }
 
 }
