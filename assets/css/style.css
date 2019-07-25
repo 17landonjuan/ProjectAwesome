@@ -128,6 +128,7 @@ h1 {
   height: 100vh;
   min-height: 600px;
   position: relative;
+  overflow: hidden;
 }
 
 .footer {
@@ -136,29 +137,84 @@ h1 {
   position: relative;
 }
 
-#section1 {
-  background-image: url("../media/2.png");
+#section1:before {
+  background-image: url("../media/road1.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1000;
+  opacity: 0.6;
 }
 
-#section2 {
-  background-image: url("../media/7.png");
+#section2:before {
+  background-image: url("../media/314828.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
+  background-position: 50% 0;
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1000;
+  opacity: 0.6;
 }
 
-#section3 {
-  background-image: url("../media/3.png");
+#section3:before {
+  background-image: url("../media/314705.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
+  background-position: 50% 0;
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1000;
+  opacity: 0.6;
 }
 
-#section4 {
-  background-image: url("../media/8.png");
+#section4:before {
+  background-image: url("../media/314839.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
+  background-position: 50% 0;
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1000;
+  opacity: 0.6;
 }
 
-#section5 {
-  background-image: url("../media/1.png");
+#section5:before {
+  background-image: url("../media/foggy-road.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
+  background-position: 50% 0;
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1000;
+  opacity: 0.6;
 }
 
 .mapBox {
@@ -171,6 +227,9 @@ h1 {
   height: 50vh;
   width: 30vw;
   min-width: 300px;
+  background: #00000026;
+  padding: 2vw;
+  color: white;
 }
 
 body {
@@ -277,7 +336,7 @@ h4 {
     position: absolute;
     top: 0;
     left: 0;
-    height: 50vh;
+    height: 30vh;
     width: 100%;
   }
 
@@ -287,6 +346,7 @@ h4 {
     left: 0;
     height: 40vh;
     width: 100%;
+
   }
 
   .navButton {
