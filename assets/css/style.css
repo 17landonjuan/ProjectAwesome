@@ -147,6 +147,7 @@ opacity: 0.9;
     height: auto;
 }
 .mapBox {
+ 
   height: 50vh;
   width: 30vw;
   min-width: 300px;
@@ -187,5 +188,13 @@ h4{
 }
 .mini-bios{
   color: rgb(64, 255, 124);
+}
+#results p{
+  font-size:28px;
+  font-style: oblique;
+  letter-spacing: 1px;
+  line-break: auto;
+  font-weight: bolder;
+
 }
 
