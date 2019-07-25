@@ -95,7 +95,9 @@ function initMap() {
                             // Function to calculate total price of gas for trip and divide by user input number of people on tirp
                             var tripCostDividedByFriends = function () {
 
-                                totalNumOnTrip = $("#frnds").val();
+                                totalNumOnTrip = $("#frnds").val().trim();
+
+
 
                                 // Conversion from meters to miles
                                 var milesOverMeters = 1 / 1609.34;
@@ -131,21 +133,33 @@ function initMap() {
 
                                 hhmmss(duration);
 
-                                console.log("Total Trip Distance: " + totalTripDistanceMi + " mi");
-                                console.log("Total Gas Used on Trip: " + totalGasUsed + " gallons");
-                                console.log("Total Cost of Gas on Trip: $" + totalGasCost);
-                                console.log("Cost of Gas per Passenger $ " + costOfGasPerFriend);
+                                var tr1 = $("<tr>");
+                                var tr2 = $("<tr>");
+                                var tr3 = $("<tr>");
+                                var tr4 = $("<tr>");
+                                var tr5 = $("<tr>");
 
-                                var p2 = $("<p>").text("Total Distance: " + totalTripDistanceMi + " mi");
-                                var p3 = $("<p>").text("Total Gas Used: " + totalGasUsed + " gallons");
-                                var p4 = $("<p>").text("Total Cost of Gas: $" + totalGasCost);
-                                var p5 = $("<p>").text("Cost of Gas per Person: $ " + costOfGasPerFriend);
-                                var p6 = $("<p>").text("Total Driving Time: " + hours + " h " + minutes + " min");
+                                var p2 = $("<td>").text("Total Distance:");
+                                var p3 = $("<td>").text("Total Gas Used:");
+                                var p4 = $("<td>").text("Total Cost of Gas:");
+                                var p5 = $("<td>").text("Cost of Gas per Person:");
+                                var p6 = $("<td>").text("Total Driving Time:");
 
-                                $('#results').append(p2);
-                                $('#results').append(p3);
-                                $('#results').append(p4);
-                                $('#results').append(p5);
+                                var td1 = $("<td>").text(totalTripDistanceMi + " mi").addClass("resultsBlue");
+                                var td2 = $("<td>").text(totalGasUsed + " gallons").addClass("resultsBlue");
+                                var td3 = $("<td>").text("$" + totalGasCost.toFixed(2)).addClass("resultsPink");
+                                var td4 = $("<td>").text("$" + costOfGasPerFriend.toFixed(2)).addClass("resultsPink");
+                                var td5 = $("<td>").text(hours + " h " + minutes + " min").addClass("resultsBlue");
+
+                                tr1.append(p2).append(td1);
+                                tr2.append(p3).append(td2);
+                                tr3.append(p4).append(td3);
+                                tr4.append(p5).append(td4);
+                                tr5.append(p6).append(td5);
+
+
+                                $('#results').append(tr1).append(tr2).append(tr3).append(tr4).append(tr5);
+
 
                             };
                             tripCostDividedByFriends();

@@ -2,6 +2,10 @@
   width: 600px;
 }
 
+#logo img {
+  width: 100%;
+}
+
 #section1 .row {
   display: block;
   width: 100%;
@@ -89,7 +93,7 @@ h1 {
 }
 
 .btn {
-  background-color: #76e881;
+  background-color: #4db2ec;
 }
 
 #carInfo {
@@ -203,7 +207,7 @@ h1 {
 }
 
 #section5:before {
-  background-image: url("../media/foggy-road.jpg");
+  background-image: url("../media/monument-valley.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 0;
@@ -215,23 +219,27 @@ h1 {
   width: 100%;
   height: 100%;
   z-index: -1000;
-  opacity: 0.6;
+  opacity: 1;
 }
 
 .mapBox {
-  height: 50vh;
+  height: 60vh;
   width: 30vw;
   min-width: 300px;
 }
 
 .resultsBox {
-  height: 50vh;
+  height: 60vh;
   width: 30vw;
   min-width: 300px;
-  background: #00000057;
+  background: #ffffffc4;
   padding: 2vw;
-  color: white;
+  color: black;
   margin-left: 2vw;
+}
+
+.resultsBox td {
+  max-width: 5vw;
 }
 
 body {
@@ -276,10 +284,41 @@ h4 {
   color: rgb(64, 255, 124);
 }
 
+.resultsBlue {
+  font-size: 16px;
+  color: #098cd9;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.resultsPink {
+  font-size: 16px;
+  color: #fd26f6;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.navButton {
+  position: absolute;
+  bottom: 20px;
+  width: 150px;
+  right: 50%;
+  margin-right: -75px;
+}
+
+.navButton2 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
 @media (max-width: 768px) {
+
+  #headerContainer {
+    margin-top: 2vh;
+  }
 
   #headerContainer h4 {
     font-size: 20px;
+
   }
 
   label {
@@ -306,6 +345,17 @@ h4 {
   #logo {
     width: 90%;
     text-align: center;
+    background-image: url("../media/logoVertical.png");
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 25vh;
+  }
+
+  #logo img {
+    display: none;
   }
 
   .container {
@@ -349,7 +399,6 @@ h4 {
     left: 0;
     height: 75vh;
     width: 100%;
-    background: #0000008c;
     padding: 5vw;
     margin: 0;
   }
