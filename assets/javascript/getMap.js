@@ -18,7 +18,8 @@ function initMap() {
         center: {
             lat: 39,
             lng: -94.5786
-        }
+        },
+        disableDefaultUI: true
     });
     directionsDisplay.setMap(map);
 
