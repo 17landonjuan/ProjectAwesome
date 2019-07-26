@@ -114,11 +114,10 @@ function initMap() {
                         console.log(highwayMPG)
                         $.ajax({
                             type: "GET",
-                            url: "http://api.eia.gov/series/?api_key=4e2512a68239a8a4d7fcccd3cea3b0c1&series_id=TOTAL.RUUCUUS.M",
+                            url: "https://api.eia.gov/series/?api_key=4e2512a68239a8a4d7fcccd3cea3b0c1&series_id=TOTAL.RUUCUUS.M",
                         }).then(function (response) {
                             // Storing an array of results in the results variable
                             var tripToggle = $('#tripToggle').prop('checked');
-
                             var results = response.series;
 
                             // Creating variable to drill down to monthly average price of unleaded gas
