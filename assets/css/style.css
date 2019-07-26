@@ -207,7 +207,7 @@ h1 {
 }
 
 #section5:before {
-  background-image: url("../media/monument-valley.jpg");
+  background-image: url("../media/desert-sky.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 0;
@@ -268,6 +268,7 @@ h4 {
 .mini-bio {
   font-size: 18px;
   color: grey;
+  text-shadow: 1px 0px 11px white;
 }
 
 .bios {
@@ -309,6 +310,8 @@ h4 {
   bottom: 20px;
   left: 20px;
 }
+
+
 
 @media (max-width: 768px) {
 
