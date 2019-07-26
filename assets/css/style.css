@@ -312,8 +312,6 @@ h4 {
   left: 20px;
 }
 
-
-
 @media (max-width: 768px) {
 
   #headerContainer {
@@ -405,19 +403,14 @@ h4 {
     width: 100%;
     padding: 5vw;
     margin: 0;
-    justify-content: flex-start;
+    justify-content: initial;
   }
 
   .navButton {
     position: absolute;
     bottom: 20px;
-    right: 85px;
-  }
-
-  .navButton2 {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
+    right: 5px;
+    margin-right: 0;
   }
 
   .container {
