@@ -44,7 +44,7 @@ function initMap() {
                 duration = response.routes[0].legs[0].duration.value;
                 console.log(duration);
             } else {
-                $("#autocompleteEnd").val('').css("background-color", "rgba(228, 255, 0, 0.34)").css("content"., );
+                $("#autocompleteEnd").val('').css("background-color", "rgba(228, 255, 0, 0.34)");
                 $("#autocompleteStart").val('').css("background-color", "rgba(228, 255, 0, 0.34)");
 
                 function moveback() {

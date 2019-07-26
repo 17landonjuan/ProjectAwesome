@@ -135,7 +135,6 @@ h1 {
   position: relative;
   overflow: hidden;
 }
-<<<<<<< HEAD
 
 .footer {
   height: 100vh;
@@ -221,34 +220,6 @@ h1 {
   height: 100%;
   z-index: -1000;
   opacity: 1;
-=======
-#section1{
-  background-image: url("../media/road1.jpg");
-  background-size: cover;
-  opacity: 0.7;
-}
-#section2 {
-  background-image: url("../media/road2.jpeg");
-  background-size: cover;
-  opacity: 0.7;
-}
-
-#section3 {
-  background-image: url("../media/foggy-road.jpg");
-  background-size: cover;
-  opacity: 0.7;
-}
-
-#section4 {
-  background-image: url("../media/rt66.jpg");
-  background-size: cover;
-  opacity: 0.7;
-}
-#section5{
-background-image: url("../media/monument-sunset.jpg");
-background-size: cover;
-opacity: 0.9;
->>>>>>> master
 }
 
 .mapBox {
@@ -286,7 +257,6 @@ h4 {
 .img-thumbnail {
   border-radius: 50%;
 }
-<<<<<<< HEAD
 
 .name {
   margin: 50px 0 0 0;
@@ -468,68 +438,3 @@ h4 {
   }
 
 }
-=======
-.img-thumbnail{
-  border-radius: 50%;
-}
-.img-thumbnail{
-  padding: .25rem;
-    background-color: #fff;
-    border: 1px solid #dee2e6;
-    border-radius: .25rem;
-    max-width: 100%;
-    height: auto;
-}
-.mapBox {
- 
-  height: 50vh;
-  width: 30vw;
-  min-width: 300px;
-}
-
-.resultsBox {
-  height: 50vh;
-  width: 30vw;
-  min-width: 300px;
-}
-body{
-  font-family:  "Raleway", Helvetica, sans-serif;
-}
-h2{
-   font-weight: bold;
-}
-h4{
-   color:  grey;
-}
-.img-thumbnail{border-radius: 50%;}
-.name{
-   margin: 50px 0 0 0;
-   color: rgb(64, 255, 124);
-   font-weight: bold;
-   font-size: 18px;
-}
-.mini-bio{
-   font-size: 18px;
-   color: grey;
-}
-.bios{
-   border: solid 1px grey;
-   border-left: 1px;
-   border-right: 1px;
-}
-.col-md-2{
-   padding: 20px 2px 20px 2px;
-}
-.mini-bios{
-  color: rgb(64, 255, 124);
-}
-#results p{
-  font-size:28px;
-  font-style: oblique;
-  letter-spacing: 1px;
-  line-break: auto;
-  font-weight: bolder;
-
-}
-
->>>>>>> master
