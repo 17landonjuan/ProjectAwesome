@@ -1,10 +1,14 @@
 var totalGas;
 var distance;
+var duration;
 var map;
 var highwayMPG;
 var year;
 var make;
 var convertedDistance;
+var totalNumOnTrip = 1;
+var hours;
+var minutes;
 
 function initMap() {
     var directionsService = new google.maps.DirectionsService;
@@ -14,7 +18,8 @@ function initMap() {
         center: {
             lat: 39,
             lng: -94.5786
-        }
+        },
+        disableDefaultUI: true
     });
     directionsDisplay.setMap(map);
 
@@ -36,6 +41,8 @@ function initMap() {
             if (status === 'OK') {
                 directionsDisplay.setDirections(response);
                 distance = response.routes[0].legs[0].distance.value;
+                duration = response.routes[0].legs[0].duration.value;
+                console.log(duration);
             } else {
                 $("#autocompleteEnd").val('').css("background-color", "rgba(228, 255, 0, 0.34)").css("content"., );
                 $("#autocompleteStart").val('').css("background-color", "rgba(228, 255, 0, 0.34)");
@@ -71,6 +78,8 @@ function initMap() {
                             url: "http://api.eia.gov/series/?api_key=4e2512a68239a8a4d7fcccd3cea3b0c1&series_id=TOTAL.RUUCUUS.M",
                         }).then(function (response) {
                             // Storing an array of results in the results variable
+                            var tripToggle = $('#tripToggle').prop('checked');
+
                             var results = response.series;
 
                             // Creating variable to drill down to monthly average price of unleaded gas
@@ -87,12 +96,15 @@ function initMap() {
                             // Function to calculate total price of gas for trip and divide by user input number of people on tirp
                             var tripCostDividedByFriends = function () {
 
-                                var totalNumOnTrip = 4;
+                                totalNumOnTrip = $("#frnds").val().trim();
+
+
 
                                 // Conversion from meters to miles
                                 var milesOverMeters = 1 / 1609.34;
 
                                 // Total Trip Distance in Miles
+
                                 var totalTripDistanceMi = Math.round((distance * milesOverMeters) * 100) / 100;
 
                                 // Total gallons of gas used on the trip
@@ -104,20 +116,51 @@ function initMap() {
                                 // Total cost of gas per friend
                                 var costOfGasPerFriend = Math.round((totalGasCost / totalNumOnTrip) * 100) / 100;
 
-                                console.log("Total Trip Distance: " + totalTripDistanceMi + " mi");
-                                console.log("Total Gas Used on Trip: " + totalGasUsed + " gallons");
-                                console.log("Total Cost of Gas on Trip: $" + totalGasCost);
-                                console.log("Cost of Gas per Friend $ " + costOfGasPerFriend);
 
-                                var p2 = $("<p>").text("Total Trip Distance: " + totalTripDistanceMi + " mi");
-                                var p3 = $("<p>").text("Total Gas Used on Trip: " + totalGasUsed + " gallons");
-                                var p4 = $("<p>").text("Total Cost of Gas on Trip: $" + totalGasCost);
-                                var p5 = $("<p>").text("Cost of Gas per Friend: $ " + costOfGasPerFriend);
 
-                                $('#results').append(p2);
-                                $('#results').append(p3);
-                                $('#results').append(p4);
-                                $('#results').append(p5);
+                                if (tripToggle === true) {
+                                    totalTripDistanceMi = totalTripDistanceMi * 2;
+                                    totalGasUsed = totalGasUsed * 2;
+                                    totalGasCost = totalGasCost * 2;
+                                    costOfGasPerFriend = costOfGasPerFriend * 2;
+                                    duration = duration * 2;
+                                }
+
+                                function hhmmss(secs) {
+                                    minutes = Math.floor(secs / 60);
+                                    hours = Math.floor(minutes / 60);
+                                    minutes = minutes % 60;
+                                }
+
+                                hhmmss(duration);
+
+                                var tr1 = $("<tr>");
+                                var tr2 = $("<tr>");
+                                var tr3 = $("<tr>");
+                                var tr4 = $("<tr>");
+                                var tr5 = $("<tr>");
+
+                                var p2 = $("<td>").text("Total Distance:");
+                                var p3 = $("<td>").text("Total Gas Used:");
+                                var p4 = $("<td>").text("Total Cost of Gas:");
+                                var p5 = $("<td>").text("Cost of Gas per Person:");
+                                var p6 = $("<td>").text("Total Driving Time:");
+
+                                var td1 = $("<td>").text(totalTripDistanceMi + " mi").addClass("resultsBlue");
+                                var td2 = $("<td>").text(totalGasUsed + " gallons").addClass("resultsBlue");
+                                var td3 = $("<td>").text("$" + totalGasCost.toFixed(2)).addClass("resultsPink");
+                                var td4 = $("<td>").text("$" + costOfGasPerFriend.toFixed(2)).addClass("resultsPink");
+                                var td5 = $("<td>").text(hours + " h " + minutes + " min").addClass("resultsBlue");
+
+                                tr1.append(p2).append(td1);
+                                tr2.append(p3).append(td2);
+                                tr3.append(p4).append(td3);
+                                tr4.append(p5).append(td4);
+                                tr5.append(p6).append(td5);
+
+
+                                $('#results').append(tr1).append(tr2).append(tr3).append(tr4).append(tr5);
+
 
                             };
                             tripCostDividedByFriends();
