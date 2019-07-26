@@ -10,6 +10,8 @@ var totalNumOnTrip = 1;
 var hours;
 var minutes;
 
+
+//convert xml to JSON
 function xmlToJson(xml) {
 
     // Create the return object
@@ -49,6 +51,8 @@ function xmlToJson(xml) {
     return obj;
 };
 
+
+//initialize google map
 function initMap() {
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -62,15 +66,18 @@ function initMap() {
     });
     directionsDisplay.setMap(map);
 
+
+    //get origin and destination from input fields
     $("#submit").on("click", function myfunction() {
         event.preventDefault();
         $("#results").empty();
         $("#autocompleteEnd").attr("style", "");
         $("#autocompleteStart").attr("style", "");
-        // console.log(document.getElementById('start').value);
         calculateAndDisplayRoute(directionsService, directionsDisplay);
     })
 
+
+    //calculate route, distance, duration
     function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         directionsService.route({
             origin: $("#autocompleteStart").val(),
@@ -81,8 +88,9 @@ function initMap() {
                 directionsDisplay.setDirections(response);
                 distance = response.routes[0].legs[0].distance.value;
                 duration = response.routes[0].legs[0].duration.value;
-                console.log(duration);
             } else {
+
+                //highlight input fields if invalid route
                 $("#autocompleteEnd").val('').css("background-color", "rgba(228, 255, 0, 0.34)");
                 $("#autocompleteStart").val('').css("background-color", "rgba(228, 255, 0, 0.34)");
 
@@ -94,24 +102,28 @@ function initMap() {
                 moveback();
 
                 $("#results").empty();
-                console.log("Failure");
-                // window.alert('Directions request failed due to ' + status);
+
             }
 
+
+
             function fuelCalc() {
+
+
                 function getMPG() {
 
                     var carID = $("#option option:selected").attr("data-id");
-
+                    //get car MPG from api
                     $.ajax({
                         type: "GET",
                         url: "https://www.fueleconomy.gov/ws/rest/vehicle/" + carID,
                         dataType: "xml",
 
                     }).then(function (response) {
-                        // carID = xmlToJson(response).menuItems.menuItem[0].value["#text"]
+
                         highwayMPG = xmlToJson(response).vehicle.highway08["#text"];
-                        console.log(highwayMPG)
+
+                        //get average fuel price from api
                         $.ajax({
                             type: "GET",
                             url: "https://api.eia.gov/series/?api_key=4e2512a68239a8a4d7fcccd3cea3b0c1&series_id=TOTAL.RUUCUUS.M",
@@ -123,8 +135,6 @@ function initMap() {
                             // Creating variable to drill down to monthly average price of unleaded gas
                             var avgPriceUnlRegGas = results[0].data[0][1];
 
-                            console.log(avgPriceUnlRegGas);
-
                             // Variable to create paragraph with gas price info
                             var p1 = $("<p>").text("National Monthly Average Price of Unleaded Gas: $" + avgPriceUnlRegGas);
 
@@ -135,8 +145,6 @@ function initMap() {
                             var tripCostDividedByFriends = function () {
 
                                 totalNumOnTrip = $("#frnds").val().trim();
-
-
 
                                 // Conversion from meters to miles
                                 var milesOverMeters = 1 / 1609.34;
@@ -154,8 +162,7 @@ function initMap() {
                                 // Total cost of gas per friend
                                 var costOfGasPerFriend = Math.round((totalGasCost / totalNumOnTrip) * 100) / 100;
 
-
-
+                                //calculate roundtrip results
                                 if (tripToggle === true) {
                                     totalTripDistanceMi = totalTripDistanceMi * 2;
                                     totalGasUsed = totalGasUsed * 2;
@@ -164,6 +171,7 @@ function initMap() {
                                     duration = duration * 2;
                                 }
 
+                                //convert duration from seconds to hh:mm
                                 function hhmmss(secs) {
                                     minutes = Math.floor(secs / 60);
                                     hours = Math.floor(minutes / 60);
@@ -172,6 +180,8 @@ function initMap() {
 
                                 hhmmss(duration);
 
+
+                                //create results box
                                 var tr1 = $("<tr>");
                                 var tr2 = $("<tr>");
                                 var tr3 = $("<tr>");
@@ -212,11 +222,12 @@ function initMap() {
     }
 
 
-
+    //google maps autocomplete inputs
     var startInput = document.getElementById('autocompleteStart');
     var autocompleteStart = new google.maps.places.Autocomplete(startInput, {
         types: []
     });
+
     google.maps.event.addListener(autocompleteStart, 'place_changed', function () {
         var place = autocompleteStart.getPlace();
     })
@@ -225,12 +236,14 @@ function initMap() {
     var autocompleteEnd = new google.maps.places.Autocomplete(endInput, {
         types: []
     });
+
     google.maps.event.addListener(autocompleteEnd, 'place_changed', function () {
         var place = autocompleteEnd.getPlace();
     })
 
 }
 
+//populate dropdown list with vehicle makes from api
 var getMakes = function () {
     $("#make").find('option').not(':first').remove();
     $("#model").find('option').not(':first').remove();
@@ -249,6 +262,7 @@ var getMakes = function () {
     })
 };
 
+//populate dropdown list with vehicle models from api
 var getModels = function () {
     $("#model").find('option').not(':first').remove();
     $("#option").find('option').not(':first').remove();
@@ -268,7 +282,7 @@ var getModels = function () {
     })
 };
 
-
+//populate dropdown list with vehicle options from api
 var getOptions = function () {
 
     $("#option").find('option').not(':first').remove();
